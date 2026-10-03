@@ -1,0 +1,41 @@
+" Arctic-blue Minimalist Rice - Vim Configuration
+
+syntax enable
+
+set number
+set relativenumber
+set nomodeline
+
+" === APPEARANCE ===
+set termguicolors
+set background=dark
+
+" Arctic blue color scheme
+colorscheme desert
+hi Normal guibg=#0C1821 guifg=#E8F4F2
+hi LineNr guibg=#0C1821 guifg=#4FACB0
+hi CursorLineNr guibg=#162633 guifg=#6DD3CE gui=bold
+hi CursorLine guibg=#162633
+hi Comment guifg=#9BAFB8 gui=italic
+hi String guifg=#6DD3CE
+hi Identifier guifg=#4FACB0
+hi Statement guifg=#C98474 gui=bold
+hi Type guifg=#6DD3CE gui=bold
+hi PreProc guifg=#4FACB0
+hi Special guifg=#FFA559
+hi VertSplit guibg=#0C1821 guifg=#2A3F4F
+hi StatusLine guibg=#162633 guifg=#6DD3CE
+hi StatusLineNC guibg=#0C1821 guifg=#4FACB0
+
+" === FONTS & READABILITY ===
+set guifont=JetBrainsMono\ Nerd\ Font:h12
+set cursorline
+set showmatch
+set laststatus=2
+
+" === INDENTATION ===
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+autocmd FileType make,go setlocal noexpandtab
