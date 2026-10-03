@@ -1,8 +1,8 @@
 Set up:
-#!/usr/bin/env bash
+
 Copy this into ~/.local/bin/rice:
 ```bash
-
+#!/usr/bin/env bash
 set -e
 cd ~/dotfiles
 for d in rice-*/; do stow -D "${d%/}" 2>/dev/null || true; done
