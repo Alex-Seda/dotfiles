@@ -1,12 +1,13 @@
 // -*- mode: jsonc -*-
-// Forest pastel Minimalist Rice - Waybar Config
+// Forest pastel Minimalist Rice - Waybar Config (continuous top bar)
 {
     "layer": "top",
     "position": "top",
-    "height": 40,
-    "margin-top": 10,
-    "margin-left": 16,
-    "margin-right": 16,
+    "height": 34,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
     "spacing": 0,
     
     // Left bar: Workspaces
