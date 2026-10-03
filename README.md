@@ -1,5 +1,19 @@
-Set up:
+# Stow Rice Setup
 
+Install stow with your package manager
+```bash
+sudo pacman -S stow
+```
+Set up Stow directories (replace "main" with your desired config name)
+```bash
+mkdir -p ~/dotfiles/rice-main/.config
+cd ~/.config
+mv hypr waybar wofi kitty tmux vim starship.toml ~/dotfiles/rice-main/.config/
+cd ~/dotfiles
+stow rice-main
+```
+
+## Set Up "rice" script
 Copy this into ~/.local/bin/rice:
 ```bash
 #!/usr/bin/env bash
@@ -17,9 +31,8 @@ Then run:
 ```bash
 chmod +x ~/.local/bin/rice
 ```
-Install stow with your package manager
 
-Now you can set the forest theme by running:
+Now you can choose the forest theme by running:
 ```bash
-stow forest
+rice forest
 ```
