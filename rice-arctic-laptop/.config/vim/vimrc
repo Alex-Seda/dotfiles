@@ -13,6 +13,8 @@ set background=dark
 " Arctic blue color scheme
 colorscheme desert
 hi Normal guibg=#0C1821 guifg=#E8F4F2
+hi NonText guibg=#0C1821 guifg=#0C1821
+hi EndOfBuffer guibg=#0C1821 guifg=#0C1821
 hi LineNr guibg=#0C1821 guifg=#4FACB0
 hi CursorLineNr guibg=#162633 guifg=#6DD3CE gui=bold
 hi CursorLine guibg=#162633
@@ -43,4 +45,3 @@ set autoindent
 set foldmethod=syntax
 set foldlevelstart=99
 set foldenable
-

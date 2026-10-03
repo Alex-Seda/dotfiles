@@ -12,6 +12,8 @@ set background=dark
 
 " Forest high-contrast palette
 hi Normal guibg=#101810 guifg=#F0F3E6
+hi NonText guibg=#101810 guifg=#101810
+hi EndOfBuffer guibg=#101810 guifg=#101810
 hi LineNr guibg=#101810 guifg=#8FA58F
 hi CursorLineNr guibg=#243524 guifg=#D0E8BA gui=bold
 hi CursorLine guibg=#182619
