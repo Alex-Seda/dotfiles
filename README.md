@@ -17,3 +17,9 @@ Then run:
 ```bash
 chmod +x ~/.local/bin/rice
 ```
+Install stow with your package manager
+
+Now you can set the forest theme by running:
+```bash
+stow forest
+```
