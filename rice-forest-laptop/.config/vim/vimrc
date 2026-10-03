@@ -1,0 +1,41 @@
+" Forest Minimalist Rice - Vim Configuration
+
+syntax enable
+
+set number
+set relativenumber
+set nomodeline
+
+" === APPEARANCE ===
+set termguicolors
+set background=dark
+
+" Forest high-contrast palette
+hi Normal guibg=#101810 guifg=#F0F3E6
+hi LineNr guibg=#101810 guifg=#8FA58F
+hi CursorLineNr guibg=#243524 guifg=#D0E8BA gui=bold
+hi CursorLine guibg=#182619
+hi Comment guifg=#B1C1AE gui=italic
+hi String guifg=#B8D99F
+hi Constant guifg=#E5C178
+hi Identifier guifg=#9DCCAA
+hi Statement guifg=#E5C178 gui=bold
+hi Type guifg=#D0E8BA gui=bold
+hi PreProc guifg=#8FC5A0
+hi Special guifg=#E58F82
+hi VertSplit guibg=#101810 guifg=#425542
+hi StatusLine guibg=#243524 guifg=#D0E8BA
+hi StatusLineNC guibg=#101810 guifg=#8FA58F
+
+" === FONTS & READABILITY ===
+set guifont=JetBrainsMono\ Nerd\ Font:h12
+set cursorline
+set showmatch
+set laststatus=2
+
+" === INDENTATION ===
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+autocmd FileType make,go setlocal noexpandtab

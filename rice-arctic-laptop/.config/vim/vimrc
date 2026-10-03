@@ -45,3 +45,5 @@ set autoindent
 set foldmethod=syntax
 set foldlevelstart=99
 set foldenable
+=======
+autocmd FileType make,go setlocal noexpandtab
