@@ -1,0 +1,44 @@
+" Pastel Dusk - Vim Configuration
+
+syntax enable
+
+set number
+set relativenumber
+set nomodeline
+
+" === APPEARANCE ===
+set termguicolors
+set background=dark
+
+" Pastel Dusk palette
+hi Normal guibg=#1E1B2B guifg=#E6E1F2
+hi NonText guibg=#1E1B2B guifg=#1E1B2B
+hi EndOfBuffer guibg=#1E1B2B guifg=#1E1B2B
+hi LineNr guibg=#1E1B2B guifg=#6E6990
+hi CursorLineNr guibg=#2A2640 guifg=#F2A7C8 gui=bold
+hi CursorLine guibg=#2A2640
+hi Visual guibg=#433D66
+hi Comment guifg=#7F79A3 gui=italic
+hi String guifg=#A8E0B8
+hi Constant guifg=#F2A7C8
+hi Identifier guifg=#8FB8F0
+hi Statement guifg=#BFA2F0 gui=bold
+hi Type guifg=#9ADCE0 gui=bold
+hi PreProc guifg=#D8A8F0
+hi Special guifg=#F0D89A
+hi VertSplit guibg=#1E1B2B guifg=#4A4470
+hi StatusLine guibg=#2A2640 guifg=#E6E1F2
+hi StatusLineNC guibg=#171520 guifg=#7F79A3
+
+" === FONTS & READABILITY ===
+set guifont=JetBrainsMono\ Nerd\ Font:h12
+set cursorline
+set showmatch
+set laststatus=2
+
+" === INDENTATION ===
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+autocmd FileType make,go setlocal noexpandtab

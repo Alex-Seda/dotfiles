@@ -254,10 +254,10 @@ hl.config({
         gaps_in = 5,
         gaps_out = 10,
         border_size = 2,
-        -- Soft forest green accent with a warm moss gradient
+        -- Pastel Dusk: pink -> purple -> blue gradient
         col = {
-            active_border = { colors = { "rgba(A8C6A0FF)", "rgba(7FA889FF)" }, angle = 45 },
-            inactive_border = "rgba(3C4938BB)",
+            active_border = { colors = { "rgba(F2A7C8FF)", "rgba(BFA2F0FF)", "rgba(8FB8F0FF)" }, angle = 45 },
+            inactive_border = "rgba(3B3657BB)",
         },
         -- Set to true enable resizing windows by clicking and dragging on borders and gaps
         resize_on_border = false,
@@ -265,7 +265,7 @@ hl.config({
         allow_tearing = false,
         layout = "dwindle",
     },
-    -- Forest pastel Minimalist Rice - Window Decoration
+    -- Pastel Dusk - Window Decoration
     decoration = {
         rounding = 12,
         -- Subtle transparency for depth
@@ -275,7 +275,7 @@ hl.config({
             enabled = true,
             range = 12,
             render_power = 3,
-            color = "rgba(151C16DD)", -- Deep forest shadow
+            color = "rgba(171520DD)", -- deep violet shadow
         },
         -- Glassy blur effect
         blur = {
@@ -361,26 +361,3 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("hypridle")
     hl.exec_cmd("sleep 1 && hyprpaper")
 end)
-
-
-
-
--- Settings for Docking Stations
-
--- SMC Perry Docking Station monitor setup
--- Left to right: DP-5 | DP-3 | DP-4
-hl.monitor({ output = "DP-5", mode = "preferred", position = "0x0",    scale = 1 })
-hl.monitor({ output = "DP-3", mode = "preferred", position = "1920x0", scale = 1 })
-hl.monitor({ output = "DP-4", mode = "preferred", position = "3840x0", scale = 1 })
-
--- Clamshell mode: disable the laptop panel when the lid closes (only if an external monitor is connected)
-hl.bind("switch:on:Lid Switch", function()
-    if #hl.get_monitors() > 1 then
-        hl.monitor({ output = "eDP-1", disabled = true })
-    end
-end, { locked = true })
-
--- Lid open: bring the laptop panel back
-hl.bind("switch:off:Lid Switch", function()
-    hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = 1 })
-end, { locked = true })

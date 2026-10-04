@@ -1,0 +1,215 @@
+/* Pastel Dusk - Waybar GTK CSS (continuous top bar) */
+
+/* === COLOR DEFINITIONS === */
+@define-color purple #BFA2F0;
+@define-color pink #F2A7C8;
+@define-color blue #8FB8F0;
+@define-color green #A8E0B8;
+
+@define-color accent #BFA2F0;
+@define-color accent-2 #F2A7C8;
+@define-color surface #3B3657;
+@define-color bg-deep #171520;
+
+@define-color warm #F0D89A;
+@define-color dim #6E6990;
+
+@define-color bg-primary #1E1B2B;
+@define-color bg-secondary #2A2640;
+
+@define-color text-primary #E6E1F2;
+@define-color text-muted #A59FBF;
+
+@define-color warning #F0D89A;
+@define-color critical #F0788E;
+@define-color success #A8E0B8;
+
+/* === GLOBAL STYLES === */
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6", "Symbols Nerd Font Mono", monospace;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    min-height: 0;
+}
+
+/* === THE BAR === */
+/* One solid strip across the full width, with a hairline along the bottom edge */
+window#waybar {
+    background-color: alpha(@bg-primary, 0.92);
+    border-bottom: 1px solid alpha(@accent, 0.22);
+    color: @text-primary;
+}
+
+/* === TOOLTIP === */
+tooltip {
+    background: alpha(@bg-primary, 0.95);
+    border: 1px solid alpha(@accent, 0.3);
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: @text-primary;
+}
+
+tooltip label {
+    color: @text-primary;
+}
+
+/* === LEFT: WORKSPACES === */
+/* No pills. Each workspace is a number with an underline marker */
+#workspaces {
+    background: transparent;
+    margin: 0px 0px 0px 8px;
+    padding: 0px;
+}
+
+#workspaces button {
+    padding: 0px 12px;
+    margin: 0px;
+    background: transparent;
+    color: @text-muted;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    transition: all 200ms ease;
+}
+
+#workspaces button:hover {
+    background: alpha(@accent, 0.08);
+    color: @text-primary;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    background: alpha(@accent, 0.1);
+    color: @accent;
+    font-weight: 700;
+    border-bottom: 2px solid @accent;
+    box-shadow: none;
+}
+
+#workspaces button.urgent {
+    color: @critical;
+    border-bottom: 2px solid @critical;
+    animation: urgent-blink 1s ease-in-out infinite alternate;
+}
+
+@keyframes urgent-blink {
+    to {
+        color: @warning;
+        border-bottom-color: @warning;
+    }
+}
+
+/* === CENTER: MEDIA === */
+#custom-media {
+    background: transparent;
+    padding: 0px 14px;
+    margin: 0px;
+    color: @text-primary;
+    font-size: 11px;
+    letter-spacing: 0.4px;
+    font-feature-settings: "liga=0,calt=0";
+}
+
+#custom-media.playing {
+    color: @accent;
+}
+
+#custom-media.paused {
+    color: @text-muted;
+}
+
+#custom-media.stopped {
+    color: @dim;
+}
+
+/* === RIGHT: STATUS === */
+/* Flat modules separated by thin vertical hairlines */
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#pulseaudio,
+#network,
+#battery,
+#clock {
+    background: transparent;
+    color: @accent;
+    padding: 0px 12px;
+    margin: 0px;
+    box-shadow: none;
+    border-left: 1px solid alpha(@accent, 0.12);
+    transition: color 200ms ease;
+}
+
+#cpu {
+    border-left: none;
+}
+
+/* Per-module accents: blue = compute, purple = display/temp, pink = audio, green = network/battery */
+#cpu,
+#memory {
+    color: @blue;
+}
+
+#temperature,
+#backlight {
+    color: @purple;
+}
+
+#pulseaudio {
+    color: @pink;
+}
+
+#cpu:hover,
+#memory:hover,
+#temperature:hover,
+#backlight:hover,
+#pulseaudio:hover,
+#network:hover,
+#battery:hover,
+#clock:hover {
+    color: @text-primary;
+}
+
+#network {
+    color: @success;
+}
+
+#network.disconnected {
+    color: @critical;
+}
+
+#battery {
+    color: @success;
+}
+
+#battery.charging {
+    color: @accent;
+}
+
+#battery.warning:not(.charging) {
+    color: @warning;
+}
+
+#battery.critical:not(.charging) {
+    color: @critical;
+}
+
+#temperature.critical {
+    color: @critical;
+}
+
+#pulseaudio.muted {
+    color: @dim;
+}
+
+/* Clock anchors the right edge: bolder, a bit more tracking */
+#clock {
+    color: @text-primary;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 0px 16px 0px 14px;
+    background: alpha(@accent, 0.08);
+}
