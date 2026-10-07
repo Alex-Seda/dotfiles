@@ -1,4 +1,4 @@
-# Theme Manager
+# Arch Linux "Dotfiles" Theme Manager
 Having a workspace that looks and functions how you like makes work more enjoyable and fluid. The less you have to think about your workspace, the more you can focus on your actual work.
 
 Ideally, you would have key-binds that allow you to work without thinking about how to perform certain tasks, which would allow you to release your inhibitions and feel the rain on your skin.
