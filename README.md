@@ -51,7 +51,7 @@ stow rice-forest-laptop
 
 This chooses the forest theme and has stow generate the symlinked files in "~/.config" to match the directories and files in "dotfiles/rice-forest-laptop/.config".
 
-## Setup "rice" Command
+## Setup the "rice" Command
 To make swapping themes easier, we will set up a CLI script.
 
 Create a file at ~/.local/bin/rice, and copy this into that file:
