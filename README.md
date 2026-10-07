@@ -1,20 +1,49 @@
-# Stow Rice Setup
+# Theme Manager
+Having a workspace that looks and functions how you like makes work more enjoyable and fluid. The less you have to think about your workspace, the more you can focus on your actual work.
 
-Install stow with your package manager
+Ideally, you would have shortcuts and workflows that minimize barriers to focusing on work, like quickly switching workspaces and seeing the information you are looking for, which would allow you to release your inhibitions and feel the rain on your skin.
+
+After a while of using an arctic theme, I wanted to change the look of my system without changing the keybinds. Every Arch Linux rice that I found online messed with my keybinds and other local settings. I set out for a quick way to be able to change my theme, so that I could have variety and not have to manually swap files every time I wanted a change.
+
+Thus, this project was born. This project allows me to keep track of as many appearances as I want and to hot swap them as often as I like. I have divided my configurations into desktop and laptop directories (with laptop being appended with "-laptop") so that I can manage all appearances in one place.
+
+Feel free to take as much or as little as you want from my work! Hopefully it will benefit you as it has benefited me!
+
+## Setup Scope
+Keep in mind that this theme manager uses my setup for my laptop/desktop, which may or may not be your desired key-binds.
+
+My current setup contains configurations for:
+- Hyprland (Desktop Environment - Tiling Window Manager)
+- Waybar (Task Bar)
+- Wofi (Application Search)
+- Kitty (Terminal Emulator)
+- Vim (Text Editor)
+- Tmux (Terminal Multiplexer)
+
+You should have these all installed via your package manager for the themes to work correctly.
+
+## Setup Stow
+
+Install stow with your package manager. 
+
+Arch Linux example is given here:
 ```bash
 sudo pacman -S stow
 ```
-Set up Stow directories (replace "main" with your desired config name)
+Set up Stow directory:
 ```bash
-mkdir -p ~/dotfiles/rice-main/.config
-cd ~/.config
-mv hypr waybar wofi kitty tmux vim starship.toml ~/dotfiles/rice-main/.config/
+cd ~
+git clone git@github.com:Alex-Seda/dotfiles.git
 cd ~/dotfiles
-stow rice-main
+stow rice-forest-laptop
 ```
 
-## Set Up "rice" script
-Copy this into ~/.local/bin/rice:
+This chooses the forest theme and has stow generate the symlinked files in "~/.config" to match the directories and files in dotfiles/rice-forest-laptop.
+
+## Setup "rice" Command
+To make swapping themes easier, we will set up a CLI script.
+
+Create a file at ~/.local/bin/rice, and copy this into that file:
 ```bash
 #!/usr/bin/env bash
 set -e
@@ -32,7 +61,17 @@ Then run:
 chmod +x ~/.local/bin/rice
 ```
 
+## Usage
 Now you can choose the forest theme by running:
 ```bash
 rice forest
 ```
+
+This uses the "stow" program to update the symlinks in your .config directory to point to the files in "rice-forest".
+
+The command "rice {theme name}" will find the directory "rice-{theme name}" in the directory that you initiated "stow" earlier (likely this project directory).
+
+It is important to note that it does not automatically remove "-" characters. So, to switch to the configuration in "rice-forest-laptop", you would run "rice forest-laptop".
+
+# Adding Themes
+*Add notes about quickly adding themes*
