@@ -1,9 +1,13 @@
 # Theme Manager
 Having a workspace that looks and functions how you like makes work more enjoyable and fluid. The less you have to think about your workspace, the more you can focus on your actual work.
 
-Ideally, you would have shortcuts and workflows that minimize barriers to focusing on work, like quickly switching workspaces and seeing the information you are looking for, which would allow you to release your inhibitions and feel the rain on your skin.
+Ideally, you would have key-binds that allow you to work without thinking about how to perform certain tasks, which would allow you to release your inhibitions and feel the rain on your skin.
 
-After a while of using an arctic theme, I wanted to change the look of my system without changing the keybinds. Every Arch Linux rice that I found online messed with my keybinds and other local settings. I set out for a quick way to be able to change my theme, so that I could have variety and not have to manually swap files every time I wanted a change.
+Additionally, having an appearance that gives you the information you need and looks appealing to you makes working in that environment more enjoyable.
+
+After a while of using an Arctic theme, I wanted to change the look of my system without changing the keybinds. There are plenty of GitHub repos that give you "out of the box" nice looking configurations, but I had the muscle memory for my key-binds, and every Arch Linux rice that I found online messed with my key-binds and other local settings. 
+
+So, I set out to figure out a way to be able to quickly change my theme: a way that I could have variety and not have to manually swap files every time I wanted a change.
 
 Thus, this project was born. This project allows me to keep track of as many appearances as I want and to hot swap them as often as I like. I have divided my configurations into desktop and laptop directories (with laptop being appended with "-laptop") so that I can manage all appearances in one place.
 
@@ -12,7 +16,7 @@ Feel free to take as much or as little as you want from my work! Hopefully it wi
 ## How It Works
 This project makes use of the open source "Stow" tool to symlink configuration files in your "~/.config" directory to themed files in another location. This allows us to change our theme by changing where the symlinks point, instead of changing the files themselves, which allows us to "hot swap" themes! 
 
-If our active theme is "forest", this looks like the "~/.config/hypr/hyprland.lua" being a symlink to "~/dotfiles/rice-forest/.config/hypr/hyprland.lua". Then, if we change the theme to "arctic", it just changes "~/.config/hypr/hyprland.lua" to point to "~/dotfiles/rice-arctic/.config/hypr/hyprland.lua". This leaves both "hyprland.lua" files unchanged, and we can easily switch back if we break something or if we change our mind.
+If our active theme is "forest", this looks like the "\~/.config/hypr/hyprland.lua" being a symlink to "\~/dotfiles/rice-forest/.config/hypr/hyprland.lua". Then, if we change the theme to "arctic", it just changes "\~/.config/hypr/hyprland.lua" to point to "\~/dotfiles/rice-arctic/.config/hypr/hyprland.lua". This leaves both "hyprland.lua" files unchanged, and we can easily switch back if we break something or if we change our mind.
 
 Additionally, since these configs are git tracked, we should never end up in a situation where our config files are just gone, and we can also easily set up new devices in our normal configuration!
 
