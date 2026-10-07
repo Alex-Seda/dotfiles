@@ -20,7 +20,7 @@ If our active theme is "forest", this looks like the "\~/.config/hypr/hyprland.l
 
 Additionally, since these configs are git tracked, we should never end up in a situation where our config files are just gone, and we can also easily set up new devices in our normal configuration!
 
-## Setup Scope
+## Scope of Configurations
 Keep in mind that this theme manager uses my setup for my laptop/desktop, which may or may not be your desired key-binds.
 
 My current setup contains configurations for:
