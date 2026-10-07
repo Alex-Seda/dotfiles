@@ -9,6 +9,13 @@ Thus, this project was born. This project allows me to keep track of as many app
 
 Feel free to take as much or as little as you want from my work! Hopefully it will benefit you as it has benefited me!
 
+## How It Works
+This project makes use of the open source "Stow" tool to symlink configuration files in your "~/.config" directory to themed files in another location. This allows us to change our theme by changing where the symlinks point, instead of changing the files themselves, which allows us to "hot swap" themes! 
+
+If our active theme is "forest", this looks like the "~/.config/hypr/hyprland.lua" being a symlink to "~/dotfiles/rice-forest/.config/hypr/hyprland.lua". Then, if we change the theme to "arctic", it just changes "~/.config/hypr/hyprland.lua" to point to "~/dotfiles/rice-arctic/.config/hypr/hyprland.lua". This leaves both "hyprland.lua" files unchanged, and we can easily switch back if we break something or if we change our mind.
+
+Additionally, since these configs are git tracked, we should never end up in a situation where our config files are just gone, and we can also easily set up new devices in our normal configuration!
+
 ## Setup Scope
 Keep in mind that this theme manager uses my setup for my laptop/desktop, which may or may not be your desired key-binds.
 
@@ -38,7 +45,7 @@ cd ~/dotfiles
 stow rice-forest-laptop
 ```
 
-This chooses the forest theme and has stow generate the symlinked files in "~/.config" to match the directories and files in dotfiles/rice-forest-laptop.
+This chooses the forest theme and has stow generate the symlinked files in "~/.config" to match the directories and files in "dotfiles/rice-forest-laptop/.config".
 
 ## Setup "rice" Command
 To make swapping themes easier, we will set up a CLI script.
@@ -73,5 +80,23 @@ The command "rice {theme name}" will find the directory "rice-{theme name}" in t
 
 It is important to note that it does not automatically remove "-" characters. So, to switch to the configuration in "rice-forest-laptop", you would run "rice forest-laptop".
 
-# Adding Themes
-*Add notes about quickly adding themes*
+## Adding Themes
+You can create a new theme by starting from scratch, or by using an existing theme for inspiration!
+
+### Copying and Modifying an Existing Theme
+The easiest way to add themes is to copy one theme directory and change what you would like changed. This could be colors, icons, widths, or anything else.
+
+To do this, just copy a theme that looks most similar to what you want to create:
+```bash
+cp -r ~/dotfiles/rice-forest ~/dotfiles/rice-{new theme name}
+```
+
+Then you can edit what you would like to change!
+
+### Creating a Blank Slate
+If you prefer to just use the update structure or want a completely different preset, you can always make an empty directory from scratch by running:
+```bash
+mkdir -p ~/dotfiles/rice-{new theme name}/.config/
+```
+
+Then you can go in and add the configurations for all the applications that you would like!
