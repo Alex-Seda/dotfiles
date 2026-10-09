@@ -15,8 +15,13 @@ hl.monitor({
     scale = 1.2,
 })
 
-hl.workspace_rule({ workspace = "1", monitor = "eDP-1" })
-hl.workspace_rule({ workspace = "3", monitor = "eDP-1" })
-hl.workspace_rule({ workspace = "5", monitor = "eDP-1" })
-hl.workspace_rule({ workspace = "7", monitor = "eDP-1" })
-hl.workspace_rule({ workspace = "9", monitor = "eDP-1" })
+
+
+-- Settings for Docking Stations
+
+-- SMC Perry Docking Station monitor setup
+-- Left to right: DP-5 | DP-3 | DP-4
+hl.monitor({ output = "desc:Dell Inc. DELL P2422H 65XK0K3", mode = "preferred", position = "0x0",    scale = 1 })
+hl.monitor({ output = "desc:Dell Inc. DELL P2422H HN800K3", mode = "preferred", position = "1920x0", scale = 1 })
+hl.monitor({ output = "desc:Dell Inc. DELL P2422H 31NY9J3", mode = "preferred", position = "3840x0", scale = 1 })
+

@@ -4,6 +4,7 @@
 
 -- Source: /home/aseda/.config/hypr/env.conf — convert this file to Lua and ensure it is on Lua's package.path.
 require("env")
+require("clamshell")
 
 --##################
 --## MY PROGRAMS ###
@@ -362,25 +363,3 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("sleep 1 && hyprpaper")
 end)
 
-
-
-
--- Settings for Docking Stations
-
--- SMC Perry Docking Station monitor setup
--- Left to right: DP-5 | DP-3 | DP-4
-hl.monitor({ output = "DP-5", mode = "preferred", position = "0x0",    scale = 1 })
-hl.monitor({ output = "DP-3", mode = "preferred", position = "1920x0", scale = 1 })
-hl.monitor({ output = "DP-4", mode = "preferred", position = "3840x0", scale = 1 })
-
--- Clamshell mode: disable the laptop panel when the lid closes (only if an external monitor is connected)
-hl.bind("switch:on:Lid Switch", function()
-    if #hl.get_monitors() > 1 then
-        hl.monitor({ output = "eDP-1", disabled = true })
-    end
-end, { locked = true })
-
--- Lid open: bring the laptop panel back
-hl.bind("switch:off:Lid Switch", function()
-    hl.monitor({ output = "eDP-1", mode = "preferred", position = "auto", scale = 1 })
-end, { locked = true })
