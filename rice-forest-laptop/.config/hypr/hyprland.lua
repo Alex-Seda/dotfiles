@@ -4,7 +4,6 @@
 
 -- Source: /home/aseda/.config/hypr/env.conf — convert this file to Lua and ensure it is on Lua's package.path.
 require("env")
-require("clamshell")
 
 --##################
 --## MY PROGRAMS ###
@@ -361,5 +360,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waybar")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("sleep 1 && hyprpaper")
+    hl.exec_cmd("kanshi")
 end)
 
